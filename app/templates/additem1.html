@@ -1,0 +1,55 @@
+<!-- about.html-->
+
+{% extends "base.html" %}
+{% block title %}Shopping List App{% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+  <h1>Shopping List</h1>
+  <p class="lead">Please create your shopping List.</p>
+  <li role="presentation" class="active"><a href="/">Home</a>
+</div>
+
+
+
+
+
+<div class="jumbotron">
+    <h1>My Shopping List</h1>
+         
+    <form action = "/viewitems" method = "post">
+      <fieldset>
+         <legend>My Shopping List</legend>
+         {{ form.hidden_tag() }}
+
+         {% for message in form.itemname.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+          {% for message in form.Price.errors %}
+          <div>{{ message }}</div>
+      {% endfor %}
+      
+        {% for message in form.Quantity.errors %}
+        <div>{{ message }}</div>
+    {% endfor %}
+
+         
+         <div class = "jumbotron" style = font-size:20px; font-weight:bold; margin-left:150px;>
+            {{ form.itemname.label }}<br>
+            {{ form.itemname }}
+            <br>
+            {{ form.Price.label }}<br>
+            {{ form.Price }}
+            <br>
+            {{ form.Quantity.label }}<br>
+            {{ form.Quantity }}
+            <br>
+            {{ form.submit }}
+         </div>
+        
+         
+      </fieldset>
+   </form>
+         
+  </div>   
+{% endblock %}

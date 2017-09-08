@@ -1,0 +1,45 @@
+<!-- about.html-->
+
+{% extends "base.html" %}
+{% block title %}Shopping List App{% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+  <h1>Shopping List</h1>
+  <p class="lead">My shopping List.</p>
+  <li role="presentation" class="active"><a href="/">Home</a>
+</div>
+
+
+
+
+
+<div class="jumbotron">
+    <h1>My Shopping List</h1>
+    <table border = 1>
+        <tr>
+            <th> Item name</th>
+            <th> Quantity</th>
+            <th> Price </th>
+        </tr>
+        
+           <tr>
+              <th> {{ itemname }} </th>
+        
+                    <th>
+                       {{ Quantity }} </th>
+        
+                  
+                    <td>
+                         {{ Price }}
+                    </td>
+                </tr>
+            </td>
+              
+           </tr>
+           
+        
+     </table>
+     <p> <a href="additem">Click here to add another item</a></p>       
+  </div>   
+{% endblock %}

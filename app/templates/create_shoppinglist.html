@@ -1,0 +1,48 @@
+<!-- about.html-->
+
+{% extends "base.html" %}
+{% block title %}Shopping List App{% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+  <h1>Shopping List</h1>
+  <p class="lead">Please create your shopping List.</p>
+  <li role="presentation" class="active"><a href="/">Home</a>
+</div>
+
+
+
+
+
+<div class="jumbotron">
+    <h1>My Shopping List</h1>
+         
+    <form action = "/create_shoppinglist" method = "post">
+      <fieldset>
+         <legend>shopping List Name</legend>
+         {{ form.hidden_tag() }}
+         
+                  {% for message in form.ListName.errors %}
+                  <div>{{ message }}</div>
+               {% endfor %}
+                   {% for message in form.Description.errors %}
+                   <div>{{ message }}</div>
+               {% endfor %}
+
+         
+         <div class = "jumbotron" style = font-size:20px; font-weight:bold; margin-left:150px;>
+            {{ form.ListName.label }}<br>
+            {{ form.ListName }}
+            <br>
+            {{ form.Description.label }}<br>
+            {{ form.Description }}
+            <br>
+            {{ form.submit }}
+         </div>
+        
+         
+      </fieldset>
+   </form>
+         
+  </div>   
+{% endblock %}

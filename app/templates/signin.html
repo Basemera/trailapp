@@ -1,0 +1,42 @@
+<!-- about.html-->
+
+{% extends "base.html" %}
+{% block title %}Shopping List App{% endblock %}
+{% block body %}
+<div class="jumbotron">
+  <h1>Sign in</h1>
+  
+     <h2 style = "text-align: center;">Login Form</h2>
+      
+     
+     <form action = "/signin" method = "post">
+        <fieldset>
+           <legend>Login Form</legend>
+           {{ form.hidden_tag() }}
+
+           {% for message in form.Username.errors %}
+           <div>{{ message }}</div>
+        {% endfor %}
+        <br>
+        {% for message in form.Password.errors %}
+           <div>{{ message }}</div>
+        {% endfor %}
+           
+           <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+              {{ form.Username.label }}<br>
+              {{ form.Username }}
+              <br>
+              
+              {{ form.Password.label }}<br>
+              {{ form.Password }}
+              <br>
+              <br>
+              {{ form.submit }}
+           </div>
+           
+        </fieldset>
+     </form>
+     
+  </body>
+  </div>
+{% endblock %}

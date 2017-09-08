@@ -1,0 +1,65 @@
+<!-- about.html-->
+
+{% extends "base.html" %}
+{% block title %}Shopping List App{% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+  <h1>Sign Up</h1>
+  <p class="lead">Please fill in the details below to sign up.</p>
+  <li role="presentation" class="active"><a href="/">Home</a>
+</div>
+  {% for message in form.Username.errors %}
+  <div>{{ message }}</div>
+  {% endfor %}
+
+{% for message in form.Email.errors %}
+<div>{{ message }}</div>
+{% endfor %}
+
+{% for message in form.Password.errors %}
+<div>{{ message }}</div>
+{% endfor %}
+
+<div class="jumbotron">
+    <h1>Shopping List App</h1>
+    <form action = "/signup" method = "post">
+      <fieldset>
+         <legend>Registration Form</legend>
+         {{ form.hidden_tag() }}
+
+         {% for message in form.Username.errors %}
+         <div>{{ message }}</div>
+         {% endfor %}
+       
+       {% for message in form.Email.errors %}
+       <div>{{ message }}</div>
+       {% endfor %}
+       
+       {% for message in form.Password.errors %}
+       <div>{{ message }}</div>
+       {% endfor %}
+
+       {% for message in form.Password2.errors %}
+       <div>{{ message }}</div>
+       {% endfor %}
+         
+         <div class = "form-group" style = font-size:20px; font-weight:bold; margin-left:150px;>
+            {{ form.Username.label }}<br>
+            {{ form.Username }}
+            <br>
+            {{ form.Email.label }}<br>
+            {{ form.Email }}<br>
+            {{ form.Password.label }}<br>
+            {{ form.Password }}
+            <br>
+            {{ form.Password2.label }}<br>
+            {{ form.Password2 }}
+         </div>
+            <br>
+            <div class = "actions" style = font-size:20px; font-weight:bold; margin-left:150px;>
+            {{ form.submit }}
+            </div>
+         
+      </fieldset>
+{% endblock %}

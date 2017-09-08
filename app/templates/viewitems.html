@@ -1,0 +1,33 @@
+<!-- about.html-->
+
+{% extends "base.html" %}
+{% block title %}Shopping List App{% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+  <h1>Shopping List</h1>
+  <p class="lead">My shopping List.</p>
+  <li role="presentation" class="active"><a href="/">Home</a>
+</div>
+
+
+
+
+
+<div class="jumbotron">
+    <h1>My Shopping List</h1>
+    <table border = 1>
+        {% for key, value in result.items() %}
+        
+           <tr>
+              <th> {{ key }} </th>
+              <td> {{ value }} </td>
+              <th> {{ key }} </th>
+              <td> {{ value }} </td>
+           </tr>
+           
+        {% endfor %}
+     </table>
+     <p> <a href="additem">Click here to add another item</a></p>       
+  </div>   
+{% endblock %}

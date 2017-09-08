@@ -1,0 +1,50 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      
+          <style>
+          table {
+              width:100%;
+          }
+          table, th, td {
+              border: 1px solid black;
+              border-collapse: collapse;
+              background-color: greenyellow;
+              color: red;
+          }
+          th, td {
+              padding: 5px;
+              text-align: left;
+          }
+          table#t01 tr:nth-child(even) {
+              background-color: #eee;
+          }
+          table#t01 tr:nth-child(odd) {
+             background-color:#fff;
+          }
+          table#t01 th {
+              background-color: black;
+              color: white;
+          }
+          </style>
+          
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+      </div>
+      {% block body %}
+      {% endblock %}
+      <footer class="footer">
+        <p>© 2017 Basemera Phiona/p>
+      </footer>
+    </div> <!-- /container -->
+  </body>
+</html>

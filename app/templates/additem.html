@@ -1,0 +1,47 @@
+<!-- about.html-->
+
+{% extends "base.html" %}
+{% block title %}Shopping List App{% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+  <h1>Shopping List</h1>
+  <p class="lead">Please create your shopping List.</p>
+  <li role="presentation" class="active"><a href="/">Home</a>
+</div>
+
+
+
+
+
+<div class="jumbotron">
+    <h1>My Shopping List</h1>
+         
+    <form action = "/viewitems" method = "post">
+      <fieldset>
+         <legend>My Shopping List</legend>
+        
+
+         
+         <div class = "jumbotron" style = font-size:20px; font-weight:bold; margin-left:150px;>
+            {{ form.itemname.label }}<br>
+            {{ form.itemname }}
+            <br>
+            <br>
+            {{ form.Quantity.label }}<br>
+            {{ form.Quantity }}
+            <br>
+            {{ form.Price.label }}<br>
+            {{ form.Price }}
+            <br>
+            <br>
+  
+            <p><input type = "submit" value = "submit" /></p>
+         </div>
+        
+         
+      </fieldset>
+   </form>
+         
+  </div>   
+{% endblock %}
